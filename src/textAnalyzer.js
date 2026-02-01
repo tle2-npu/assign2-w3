@@ -7,8 +7,10 @@ function readFile(filePath) {
 
 // Count total number of words 
 function countWords(text) {
-    const words = text.trim().split(/\s+/);
-    return words.length; 
+    if (!text || text.trim() === '') {
+        return 0;
+    }
+    return text.trim().split(/\s+/).length;
 }
 
 // Find the longest word 
